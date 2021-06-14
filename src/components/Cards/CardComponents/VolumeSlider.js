@@ -16,10 +16,6 @@ function valuetext(value) {
   return `${value}°C`;
 }
 
-function currentVal(value) {
-  return value;
-}
-
 export default function DiscreteSlider(props) {
   const classes = useStyles();
 
@@ -29,7 +25,7 @@ export default function DiscreteSlider(props) {
         Volume
       </Typography>
       <Slider
-        defaultValue={props.volume}
+        value={props.volume}
         getAriaValueText={valuetext}
         aria-labelledby="discrete-slider"
         valueLabelDisplay="auto"
@@ -37,6 +33,7 @@ export default function DiscreteSlider(props) {
         marks
         min={0}
         max={100}
+        onChange={props.setVolume}
       />
     </div>
   );
